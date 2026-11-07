@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080a09">
+<title>AnalisisBetChile | Sports Center</title>
+<style>
+:root{
+ --bg:#080a09;
+ --panel:#111512;
+ --panel2:#171c18;
+ --green:#b7ff35;
+ --text:#f5f7f3;
+ --muted:#89938b;
+ --line:#252d27;
+}
+*{box-sizing:border-box}
+body{
+ margin:0;background:var(--bg);color:var(--text);
+ font-family:Arial,Helvetica,sans-serif;
+}
+header{
+ background:#0c100d;border-bottom:1px solid var(--line);
+ position:sticky;top:0;z-index:10;
+}
+.top{
+ max-width:1200px;margin:auto;padding:18px 20px;
+ display:flex;align-items:center;justify-content:space-between;
+}
+.logo{font-size:22px;font-weight:900;letter-spacing:-1px}
+.logo span{color:var(--green)}
+.tag{font-size:10px;color:var(--muted);letter-spacing:2px;margin-top:5px}
+.live-indicator{font-size:11px;color:var(--green);font-weight:bold}
+.live-indicator i{
+ display:inline-block;width:7px;height:7px;
+ background:var(--green);border-radius:50%;margin-right:6px;
+}
+main{max-width:1200px;margin:auto;padding:22px 17px}
+.hero{
+ background:linear-gradient(120deg,#19251a,#101511 60%,#20291c);
+ border:1px solid #34432d;border-radius:18px;
+ padding:27px 22px;margin-bottom:25px;
+ position:relative;overflow:hidden;
+}
+.hero:after{
+ content:"";position:absolute;width:190px;height:190px;
+ right:-55px;top:-65px;border:30px solid #b7ff3510;
+ border-radius:50%;
+}
+.eyebrow{font-size:10px;letter-spacing:3px;color:var(--green);font-weight:bold}
+.hero h1{font-size:31px;line-height:1.1;margin:13px 0 9px;max-width:500px}
+.hero p{font-size:13px;color:#a5afa6;line-height:1.6;max-width:440px}
+.hero strong{color:var(--green)}
+.section-title{
+ display:flex;justify-content:space-between;align-items:center;
+ margin:26px 0 13px;
+}
+.section-title h2{font-size:17px;margin:0}
+.section-title span{font-size:11px;color:var(--muted)}
+.sports{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+.sport{
+ border:1px solid var(--line);background:var(--panel);
+ color:var(--text);border-radius:12px;padding:15px 5px;
+ font-weight:bold;font-size:12px;cursor:pointer;
+}
+.sport b{display:block;font-size:23px;margin-bottom:8px}
+.sport.active{
+ border-color:var(--green);background:#1b2716;
+ color:var(--green);box-shadow:inset 0 0 18px #b7ff350c;
+}
+.filters{display:flex;gap:8px;overflow-x:auto;padding:2px 0 13px}
+.filter{
+ border:1px solid var(--line);background:var(--panel);
+ color:#aab3aa;border-radius:20px;padding:10px 16px;
+ font-size:11px;font-weight:bold;white-space:nowrap;cursor:pointer;
+}
+.filter.active{background:var(--green);color:#10150d;border-color:var(--green)}
+.board{
+ border:1px solid var(--line);border-radius:15px;
+ background:var(--panel);overflow:hidden;
+}
+.board-head{
+ padding:16px;border-bottom:1px solid var(--line);
+ display:flex;justify-content:space-between;align-items:center;
+}
+.board-head strong{font-size:13px}
+.board-head span{font-size:10px;color:var(--green)}
+.empty{padding:45px 15px;text-align:center;color:var(--muted)}
+.empty b{display:block;color:var(--text);font-size:15px;margin:12px}
+.empty .symbol{font-size:34px}
+.info{
+ background:#111a11;border:1px solid #293827;
+ padding:15px;border-radius:12px;margin-top:18px;
+ color:#a9b5a7;font-size:12px;line-height:1.6;
+}
+footer{
+ text-align:center;padding:30px 15px;color:#667067;
+ font-size:10px;letter-spacing:2px;
+}
+button{font-family:inherit}
+@media(min-width:700px){
+ main{padding:30px 25px}
+ .hero{padding:40px}
+ .hero h1{font-size:43px}
+ .sports{grid-template-columns:repeat(4,150px)}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="top">
+  <div>
+   <div class="logo">ANALISIS<span>BET</span>CHILE</div>
+   <div class="tag">THE SPORTS CENTER</div>
+  </div>
+  <div class="live-indicator"><i></i>SPORTS DATA</div>
+ </div>
+</header>
+
+<main>
+ <section class="hero">
+  <div class="eyebrow">BIENVENIDO A LA NUEVA ERA</div>
+  <h1>EL DEPORTE<br>SE VIVE <strong>AQUÍ.</strong></h1>
+  <p>Resultados, competiciones y estadísticas deportivas en una sola plataforma.</p>
+ </section>
+
+ <div class="section-title">
+  <h2>EXPLORAR DEPORTES</h2>
+  <span>01 / DEPORTES</span>
+ </div>
+
+ <section class="sports">
+  <button class="sport active" data-sport="all"><b>✦</b>Todos</button>
+  <button class="sport" data-sport="football"><b>⚽</b>Fútbol</button>
+  <button class="sport" data-sport="basketball"><b>🏀</b>Básquetbol</button>
+  <button class="sport" data-sport="tennis"><b>🎾</b>Tenis</button>
+ </section>
+
+ <div class="section-title">
+  <h2>AGENDA DEPORTIVA</h2>
+  <span>02 / PARTIDOS</span>
+ </div>
+
+ <nav class="filters">
+  <button class="filter active" data-state="all">TODOS</button>
+  <button class="filter" data-state="live">● EN VIVO</button>
+  <button class="filter" data-state="next">PRÓXIMOS</button>
+  <button class="filter" data-state="done">FINALIZADOS</button>
+ </nav>
+
+ <section class="board">
+  <div class="board-head">
+   <strong>PARTIDOS Y RESULTADOS</strong>
+   <span>ANALISISBETCHILE</span>
+  </div>
+  <div class="empty">
+   <div class="symbol">◈</div>
+   <b>PREPARANDO EL CENTRO DEPORTIVO</b>
+   Aquí aparecerán los encuentros y sus resultados.
+  </div>
+ </section>
+
+ <div class="info">
+  <strong style="color:var(--green)">ANALISISBETChile 2.0</strong><br>
+  Nueva plataforma de información deportiva. Próximamente incorporaremos resultados en directo y estadísticas de los encuentros.
+ </div>
+</main>
+
+<footer>ANALISISBETCHILE · SPORTS CENTER · 2026</footer>
+
+<script>
+document.querySelectorAll("[data-sport]").forEach(button=>{
+ button.addEventListener("click",()=>{
+  document.querySelectorAll("[data-sport]").forEach(b=>b.classList.toggle("active",b===button));
+ });
+});
+document.querySelectorAll("[data-state]").forEach(button=>{
+ button.addEventListener("click",()=>{
+  document.querySelectorAll("[data-state]").forEach(b=>b.classList.toggle("active",b===button));
+ });
+});
+</script>
+</body>
+</html>
