@@ -8,104 +8,57 @@
 <title>AnalisisBetChile | Sports Center</title>
 <style>
 :root{
- --bg:#080a09;
- --panel:#111512;
- --panel2:#171c18;
- --green:#b7ff35;
- --text:#f5f7f3;
- --muted:#89938b;
+ --bg:#080a09;--panel:#111512;--panel2:#171c18;
+ --green:#b7ff35;--text:#f5f7f3;--muted:#89938b;
  --line:#252d27;
 }
 *{box-sizing:border-box}
-body{
- margin:0;background:var(--bg);color:var(--text);
- font-family:Arial,Helvetica,sans-serif;
-}
-header{
- background:#0c100d;border-bottom:1px solid var(--line);
- position:sticky;top:0;z-index:10;
-}
-.top{
- max-width:1200px;margin:auto;padding:18px 20px;
- display:flex;align-items:center;justify-content:space-between;
-}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+header{background:#0c100d;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.top{max-width:1200px;margin:auto;padding:18px 20px;display:flex;align-items:center;justify-content:space-between}
 .logo{font-size:22px;font-weight:900;letter-spacing:-1px}
 .logo span{color:var(--green)}
 .tag{font-size:10px;color:var(--muted);letter-spacing:2px;margin-top:5px}
 .live-indicator{font-size:11px;color:var(--green);font-weight:bold}
-.live-indicator i{
- display:inline-block;width:7px;height:7px;
- background:var(--green);border-radius:50%;margin-right:6px;
-}
+.live-indicator i{display:inline-block;width:7px;height:7px;background:var(--green);border-radius:50%;margin-right:6px}
 main{max-width:1200px;margin:auto;padding:22px 17px}
-.hero{
- background:linear-gradient(120deg,#19251a,#101511 60%,#20291c);
- border:1px solid #34432d;border-radius:18px;
- padding:27px 22px;margin-bottom:25px;
- position:relative;overflow:hidden;
-}
-.hero:after{
- content:"";position:absolute;width:190px;height:190px;
- right:-55px;top:-65px;border:30px solid #b7ff3510;
- border-radius:50%;
-}
+.hero{background:linear-gradient(120deg,#19251a,#101511 60%,#20291c);border:1px solid #34432d;border-radius:18px;padding:27px 22px;margin-bottom:25px}
 .eyebrow{font-size:10px;letter-spacing:3px;color:var(--green);font-weight:bold}
 .hero h1{font-size:31px;line-height:1.1;margin:13px 0 9px;max-width:500px}
 .hero p{font-size:13px;color:#a5afa6;line-height:1.6;max-width:440px}
 .hero strong{color:var(--green)}
-.section-title{
- display:flex;justify-content:space-between;align-items:center;
- margin:26px 0 13px;
-}
+.section-title{display:flex;justify-content:space-between;align-items:center;margin:26px 0 13px}
 .section-title h2{font-size:17px;margin:0}
 .section-title span{font-size:11px;color:var(--muted)}
 .sports{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
-.sport{
- border:1px solid var(--line);background:var(--panel);
- color:var(--text);border-radius:12px;padding:15px 5px;
- font-weight:bold;font-size:12px;cursor:pointer;
-}
+.sport{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:12px;padding:15px 5px;font-weight:bold;font-size:12px;cursor:pointer}
 .sport b{display:block;font-size:23px;margin-bottom:8px}
-.sport.active{
- border-color:var(--green);background:#1b2716;
- color:var(--green);box-shadow:inset 0 0 18px #b7ff350c;
-}
+.sport.active{border-color:var(--green);background:#1b2716;color:var(--green)}
 .filters{display:flex;gap:8px;overflow-x:auto;padding:2px 0 13px}
-.filter{
- border:1px solid var(--line);background:var(--panel);
- color:#aab3aa;border-radius:20px;padding:10px 16px;
- font-size:11px;font-weight:bold;white-space:nowrap;cursor:pointer;
-}
+.filter{border:1px solid var(--line);background:var(--panel);color:#aab3aa;border-radius:20px;padding:10px 16px;font-size:11px;font-weight:bold;white-space:nowrap;cursor:pointer}
 .filter.active{background:var(--green);color:#10150d;border-color:var(--green)}
-.board{
- border:1px solid var(--line);border-radius:15px;
- background:var(--panel);overflow:hidden;
-}
-.board-head{
- padding:16px;border-bottom:1px solid var(--line);
- display:flex;justify-content:space-between;align-items:center;
-}
+.board{border:1px solid var(--line);border-radius:15px;background:var(--panel);overflow:hidden}
+.board-head{padding:16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
 .board-head strong{font-size:13px}
 .board-head span{font-size:10px;color:var(--green)}
-.empty{padding:45px 15px;text-align:center;color:var(--muted)}
+.match{padding:17px 15px;border-bottom:1px solid var(--line)}
+.match:last-child{border-bottom:0}
+.competition{font-size:10px;color:var(--muted);margin-bottom:13px}
+.match-main{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+.teams{display:grid;gap:12px;font-size:13px;font-weight:bold}
+.team{display:flex;align-items:center;gap:9px}
+.team-icon{width:22px;text-align:center;font-size:17px}
+.score{text-align:right;font-size:17px;font-weight:900;line-height:1.8}
+.match-status{font-size:10px;color:var(--green);text-align:right;font-weight:bold}
+.match-status.finished{color:var(--muted)}
+.empty{padding:42px 15px;text-align:center;color:var(--muted);font-size:13px;line-height:1.6}
 .empty b{display:block;color:var(--text);font-size:15px;margin:12px}
 .empty .symbol{font-size:34px}
-.info{
- background:#111a11;border:1px solid #293827;
- padding:15px;border-radius:12px;margin-top:18px;
- color:#a9b5a7;font-size:12px;line-height:1.6;
-}
-footer{
- text-align:center;padding:30px 15px;color:#667067;
- font-size:10px;letter-spacing:2px;
-}
+.info{background:#111a11;border:1px solid #293827;padding:15px;border-radius:12px;margin-top:18px;color:#a9b5a7;font-size:12px;line-height:1.6}
+.refresh{border:1px solid var(--green);background:transparent;color:var(--green);padding:9px 13px;border-radius:9px;font-size:11px;font-weight:bold;cursor:pointer}
+footer{text-align:center;padding:30px 15px;color:#667067;font-size:10px;letter-spacing:2px}
 button{font-family:inherit}
-@media(min-width:700px){
- main{padding:30px 25px}
- .hero{padding:40px}
- .hero h1{font-size:43px}
- .sports{grid-template-columns:repeat(4,150px)}
-}
+@media(min-width:700px){main{padding:30px 25px}.hero{padding:40px}.hero h1{font-size:43px}.sports{grid-template-columns:repeat(4,150px)}}
 </style>
 </head>
 <body>
@@ -127,8 +80,7 @@ button{font-family:inherit}
  </section>
 
  <div class="section-title">
-  <h2>EXPLORAR DEPORTES</h2>
-  <span>01 / DEPORTES</span>
+  <h2>EXPLORAR DEPORTES</h2><span>01 / DEPORTES</span>
  </div>
 
  <section class="sports">
@@ -139,8 +91,7 @@ button{font-family:inherit}
  </section>
 
  <div class="section-title">
-  <h2>AGENDA DEPORTIVA</h2>
-  <span>02 / PARTIDOS</span>
+  <h2>AGENDA DEPORTIVA</h2><span>02 / PARTIDOS</span>
  </div>
 
  <nav class="filters">
@@ -153,34 +104,117 @@ button{font-family:inherit}
  <section class="board">
   <div class="board-head">
    <strong>PARTIDOS Y RESULTADOS</strong>
-   <span>ANALISISBETCHILE</span>
+   <button class="refresh" id="refresh">↻ ACTUALIZAR</button>
   </div>
-  <div class="empty">
-   <div class="symbol">◈</div>
-   <b>PREPARANDO EL CENTRO DEPORTIVO</b>
-   Aquí aparecerán los encuentros y sus resultados.
+  <div id="matches">
+   <div class="empty"><div class="symbol">◈</div><b>CARGANDO PARTIDOS</b>Conectando con el centro deportivo...</div>
   </div>
  </section>
 
  <div class="info">
-  <strong style="color:var(--green)">ANALISISBETChile 2.0</strong><br>
-  Nueva plataforma de información deportiva. Próximamente incorporaremos resultados en directo y estadísticas de los encuentros.
+  <strong style="color:var(--green)">ANALISISBETCHILE 2.0</strong><br>
+  Información deportiva y resultados. Los datos dependen de la disponibilidad del proveedor.
  </div>
 </main>
 
 <footer>ANALISISBETCHILE · SPORTS CENTER · 2026</footer>
 
 <script>
+const API="https://sportscore.com/api/widget/matches/";
+let selectedSport="all";
+let selectedState="all";
+let allMatches=[];
+
+function getName(team){
+ if(typeof team==="string") return team;
+ return team?.name || team?.title || team?.short_name || "Equipo";
+}
+function getCompetition(match){
+ return match.competition?.name || match.league?.name ||
+        match.tournament?.name || match.competition_name || "Competición";
+}
+function getStatus(match){
+ const raw=String(match.status || match.status_text || "").toLowerCase();
+ if(raw.includes("live") || raw.includes("1st") || raw.includes("2nd") ||
+    raw.includes("quarter") || raw.includes("period") || raw.includes("in play") ||
+    raw.includes("half") || raw.includes("en vivo")) return "live";
+ if(raw.includes("finish") || raw.includes("ended") || raw.includes("full time") ||
+    raw.includes("final") || raw==="ft") return "done";
+ return "next";
+}
+function getScore(match){
+ const home=match.home_score ?? match.home?.score ?? match.scores?.home ?? "-";
+ const away=match.away_score ?? match.away?.score ?? match.scores?.away ?? "-";
+ return `${home} - ${away}`;
+}
+function render(){
+ const container=document.getElementById("matches");
+ const filtered=allMatches.filter(m=>
+  selectedState==="all" || getStatus(m)===selectedState
+ );
+ if(!filtered.length){
+  container.innerHTML='<div class="empty"><div class="symbol">◈</div><b>NO HAY PARTIDOS PARA MOSTRAR</b>Prueba con otro filtro o vuelve a actualizar.</div>';
+  return;
+ }
+ container.innerHTML=filtered.map(m=>{
+  const home=getName(m.home_team || m.home || m.team_home);
+  const away=getName(m.away_team || m.away || m.team_away);
+  const status=getStatus(m);
+  const label=status==="live"?(m.status_text || "EN VIVO"):
+               status==="done"?"FINALIZADO":
+               (m.time || m.start_time || m.date || "PRÓXIMO");
+  return `<article class="match">
+   <div class="competition">${getCompetition(m)}</div>
+   <div class="match-main">
+    <div class="teams">
+     <div class="team"><span class="team-icon">⚽</span>${home}</div>
+     <div class="team"><span class="team-icon">⚽</span>${away}</div>
+    </div>
+    <div>
+     <div class="score">${getScore(m)}</div>
+     <div class="match-status ${status==="done"?"finished":""}">${label}</div>
+    </div>
+   </div>
+  </article>`;
+ }).join("");
+}
+async function loadMatches(){
+ const container=document.getElementById("matches");
+ container.innerHTML='<div class="empty"><div class="symbol">◈</div><b>CARGANDO PARTIDOS</b>Consultando los encuentros disponibles...</div>';
+ try{
+  const sports=selectedSport==="all"?["football","basketball","tennis"]:[selectedSport];
+  const responses=await Promise.all(sports.map(async sport=>{
+   const response=await fetch(`${API}?sport=${sport}&limit=50`);
+   if(!response.ok) throw new Error("Error de conexión");
+   const data=await response.json();
+   return data.matches || data.data?.matches || data.data || data.results || [];
+  }));
+  allMatches=responses.flat();
+  render();
+  if(!allMatches.length){
+   container.innerHTML='<div class="empty"><div class="symbol">◈</div><b>NO HAY PARTIDOS DISPONIBLES</b>El proveedor no entregó encuentros en este momento.</div>';
+  }
+ }catch(error){
+  container.innerHTML='<div class="empty"><div class="symbol">⚠</div><b>NO SE PUDIERON CARGAR LOS PARTIDOS</b>Puede existir un problema de conexión con el proveedor. Intenta actualizar.</div>';
+ }
+}
 document.querySelectorAll("[data-sport]").forEach(button=>{
  button.addEventListener("click",()=>{
+  selectedSport=button.dataset.sport;
   document.querySelectorAll("[data-sport]").forEach(b=>b.classList.toggle("active",b===button));
+  loadMatches();
  });
 });
 document.querySelectorAll("[data-state]").forEach(button=>{
  button.addEventListener("click",()=>{
+  selectedState=button.dataset.state;
   document.querySelectorAll("[data-state]").forEach(b=>b.classList.toggle("active",b===button));
+  render();
  });
 });
+document.getElementById("refresh").addEventListener("click",loadMatches);
+loadMatches();
+setInterval(loadMatches,60000);
 </script>
 </body>
 </html>
